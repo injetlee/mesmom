@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-image:url("../../static/images/thinking.jpg");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    height:100vh;
+}
+.navbar{
+    width:100%;
+    position: fixed;
+    background:transparent;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+.navbar-dark{
+    background:#222;
+}
+.wrap{
+    width:960px;
+    margin:0 auto;
+    margin-top:80px;
+}
+header{
+    width:960px;
+    margin:0 auto;
+}
+.menu ul{
+    display: inline-block;
+    margin-left:100px;
+}
+.menu li{
+    list-style:none;
+    display:inline-block;
+    margin-left:30px;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    font-family:"Lato",sans-serif;
+    padding:5px;
+    transition-property:background color;
+    transition-duration:0.4s;
+    transition-timing-function: ease-in-out;
+}
+.menu li:hover{
+    background:#fff;
+    color:#606060;
+    border-radius:5px;
+}
+.menu .logotext{
+    font-family:"微软雅黑";
+    font-size:40px;
+    color:#fff;
+}
+.left{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.left>div{
+    width:320px;
+    height:200px;
+    background: yellow;
+    border:1px solid #000;
+}
+.left>div:hover{
+    opacity:0.5;
+}
+
