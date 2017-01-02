@@ -17,6 +17,9 @@ body{
     background:transparent;
     top:0;
     left:0;
+    transition-property: background;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
     z-index: 999;
 }
 .navbar-dark{
@@ -40,10 +43,10 @@ header{
     display:inline-block;
     margin-left:30px;
     color:#fff;
-    font-size:20px;
+    font-size:15px;
     cursor:pointer;
-    font-family:"Lato",sans-serif;
     padding:5px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
     transition-property:background color;
     transition-duration:0.4s;
     transition-timing-function: ease-in-out;

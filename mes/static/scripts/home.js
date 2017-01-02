@@ -9,20 +9,20 @@ function changeLogo(){
 
     }
 }
-function abc(){
+function changeNavbar(){
     var getDivPosition = document.querySelector(".wrap");
     var position = getDivPosition.getBoundingClientRect().top;
-    console.log(position)
     if(position<80){
         var getNavbar = document.getElementsByClassName("navbar");
-        getNavbar[0].style.backgroundColor="#222"
+        getNavbar[0].className = "navbar navbar-dark"
     }else{
         var getNavbar = document.getElementsByClassName("navbar");
-        getNavbar[0].style.backgroundColor="transparent";
+        getNavbar[0].className = "navbar"
     }
 }
 window.onload=function(){
     changeLogo();
-    document.getElementsByTagName("body")[0].onscroll = abc;
+    changeNavbar()
+    document.getElementsByTagName("body")[0].onscroll = changeNavbar;
 
 };
