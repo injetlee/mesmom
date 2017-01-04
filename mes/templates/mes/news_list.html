@@ -1,0 +1,6 @@
+{% extends "base.html"%}
+{% block content%}
+        {% for new in object_list %}
+            <div>{{ new.content }}</div>
+        {% endfor %}
+{% endblock %}
