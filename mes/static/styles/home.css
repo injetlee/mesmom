@@ -9,7 +9,8 @@ body{
     background-repeat:no-repeat;
     background-size:cover;
     background-attachment: fixed;
-    height:100vh;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
 }
 .navbar{
     width:100%;
@@ -67,12 +68,48 @@ header{
     flex-wrap:wrap;
 }
 .left>div{
-    width:320px;
-    height:200px;
-    background: yellow;
+    width:960px;
+    background: #E2E4E6;
     border:1px solid #000;
+    border-radius:10px;
+    padding:0 10px 10px;
+    cursor:pointer;
+    margin-bottom: 20px;
+    height:200px;
+    word-wrap: break-word; 
 }
-.left>div:hover{
-    opacity:0.5;
+.left>div span{
+    display: block;
+    width:100%;
+    color:#259;
+    text-align: center;
+    font-size:24px;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px #A0A0A0;
+    margin-bottom: 5px;
+}
+.left .news-content{
+    background:#fff;
+    width:100%;
+    margin:0 auto;
+    height:120px;
+    border-radius: 5px;
+    text-indent: 2em;
+    line-height: 1.7;
+    font-size:13px;
+    padding: 5px;
+    overflow: hidden;
+}
+.left a{
+    display:inline-block;
+    font-size:13px;
+    text-align: right;
+    text-decoration: none;
+    float:right;
+    margin-top:5px;
+
+}
+.left a:hover{
+    background: #eff6fa;
 }
 

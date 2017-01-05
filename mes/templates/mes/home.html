@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block content%}
+        {% for new in object_list %}
+            <div>
+	            <span>
+	            	{{new.title}}
+	            </span>
+	            <div class="news-content">
+	            {{ new.content }}
+	            </div>
+	            <a class="load-more" href="#more">查看更多</a>
+            </div>
+        {% endfor %}
+{% endblock %}
