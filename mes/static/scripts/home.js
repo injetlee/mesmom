@@ -10,8 +10,21 @@ function changeLogo(){
     }
 }
 function changeNavbar(){
-    scrollTop = window.pageYOffset;
-    //console.log('dangqiangundong'+window.pageYOffset + window.innerHeight);
+    /*
+    查看更多，判断浮动按钮位置，何时回归原位，实现并不彻底。
+    var getFloatButton = document.getElementById("float-button");
+    if(getFloatButton){
+        var floatButtonPosition = getFloatButton.getBoundingClientRect().top;
+    }
+    var getHiddenEle = document.getElementById("hidden");
+    if(getHiddenEle){
+        var getHiddenAposition = getHiddenEle.getBoundingClientRect().top;
+    }
+    if(floatButtonPosition >= getHiddenAposition-50){
+        getFloatButton.removeAttribute("id");
+        getFloatButton.parentNode.removeChild(getFloatButton.parentNode.lastChild)
+    }
+    */
     var getDivPosition = document.querySelector(".wrap");
     var position = getDivPosition.getBoundingClientRect().top;
     if(position<80){
@@ -26,7 +39,6 @@ function loadMore(){
     var getLink = document.getElementsByClassName("load-more");
     console.log('aaa')
     for(var i=0;i<getLink.length;i++){
-        flg = 0;
         getLink[i].onclick = function(){
             if(this.innerHTML=="查看更多"){
                 console.log(this.pageX);
@@ -37,30 +49,20 @@ function loadMore(){
             }else{
                 this.parentNode.style.height="200px";
                 this.previousElementSibling.style.height = "120px";
-                this.style.position="relative";
-                this.innerHTML="查看更多"
-                flg = 0;
+                //this.style.position="relative";
+                this.innerHTML="查看更多";
+                // this.removeAttribute("id");
 
             }
-            // var position = this.getBoundingClientRect().top;
-            // var windowHeight = window.innerHeight;
-            // if(position>windowHeight){
-            //     this.style.position="fixed"
-            //     this.style.bottom = "0";
-            //     this.style.right = "0"
-            // }
-            // console.log(position)
-            // this.onscroll = function(){
-            //     console.log('hahahaha');
-            //     //console.log(this.getBoundingClientRect().top)
-            // }
-            // console.log('dangqiangundong'+window.pageYOffset + window.innerHeight);
+            var position = this.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
 
-            // if(parseInt(position)+parseInt(scrollTop)>parseInt(position)){
-            //     console.log('here')
-            // }
-            // console.log(window.innerHeight)
-            // console.log(parseInt(position))
+            if(position>windowHeight){
+                var newEle = document.createElement("a");
+                newEle.setAttribute("id","hidden");
+                this.parentNode.appendChild(newEle)
+                this.setAttribute("id","float-button")
+            }
 
         }
     }
@@ -69,7 +71,7 @@ window.onload=function(){
     changeLogo();
     changeNavbar()
     document.getElementsByTagName("body")[0].onscroll = changeNavbar;
-    loadMore();
+    // loadMore(); 查看更多实现函数
 
 
 };

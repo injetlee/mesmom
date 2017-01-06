@@ -9,8 +9,8 @@ from django.utils.decorators import method_decorator
 
 
 class Home(ListView):
-    model = News
-    queryset = News.objects.all()
+    # model = News
+    queryset = News.objects.order_by('-pub_date')
     template_name = 'mes/home.html'
 
 
