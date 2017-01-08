@@ -1,63 +1,36 @@
 {% extends "base.html"%}
 {% block content %}
-<div>hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
+<div class="BtnBox">
+	<ul class="fa-ul">
+		<li class="question">
+		<input autocomplete="off" type="radio" name="question-alert">
+		<div class="question-alert">
+			<div>提问
+				<input id="input" autocomplete="off" type="radio" name="question-alert">
+				<i id="alert-close" class="fa fa-times"></i>
+			</div>
+			<form action="">
+				<textarea name="" class="question-input" id="question-title"  placeholder="写下你的问题">
+					
+				</textarea>
+				</br>
+				<span>问题说明</span>
+				<textarea name="" class="question-input" id="question-content"></textarea>
+				<br/>
+				<span>选择话题</span>
+				<input type="text">
+				<span class="button">
+				<button>取消</button>
+				<button>发布</button>
+				</span>
+			</form>
+		</div>
+			<a><i class="fa-li fa fa-question-circle-o"></i>提问</a>
+			
+		</li>
+		<li><a href=""><i class="fa-li fa fa-file-text-o"></i>回答</a></li>
+		<li><a href=""><i class="fa-li fa fa-pencil-square-o"></i>写文章</a></li>
+	</ul>
 </div>
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
-hello world
+
 {% endblock %}

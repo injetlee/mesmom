@@ -1,9 +1,11 @@
 {% extends "base.html"%}
 {% block content%}
+<div class="left">
         {% for new in object_list %}
             <div>
 	            <span>
 	            	{{new.title}}
+                    {{ new.pub_date }}
 	            </span>
 	            <div class="news-content">
 	            {{ new.content }}
@@ -11,4 +13,5 @@
 <!-- 	            <a class="load-more" href="#more">查看更多</a> -->
             </div>
         {% endfor %}
+</div>
 {% endblock %}

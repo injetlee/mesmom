@@ -67,7 +67,34 @@ function loadMore(){
         }
     }
 }
+
+function alertQuestion(){
+    var getInput = document.getElementById("input");
+    getInput.setAttribute("checked","false");
+}
+// function closeAlert(){
+//     var getI = document.getElementById("alert-close");
+//     getI.onclick = function(){
+//         var getBtnBox = document.getElementsByClassName("question-alert");
+//         var aaa = getBtnBox[0].parentNode;
+//         aaa.removeChild(aaa.childNodes[2])
+//         var getInput = document.getElementById("input");
+//         console.log(aaa)
+//         getInput.setAttribute("checked","checked");
+//         console.log(getInput)
+//     }
+// }
 window.onload=function(){
+    var getInput = document.getElementById("input");
+    var getI = document.getElementById("alert-close");
+    if(getInput){
+        alertQuestion();
+    }
+    // if(getI){
+    //     var getIn = document.getElementById("input");
+    //     getIn.setAttribute("checked","checked")
+    //     // closeAlert()
+    // }
     changeLogo();
     changeNavbar()
     document.getElementsByTagName("body")[0].onscroll = changeNavbar;

@@ -1,0 +1,112 @@
+.question-alert{
+	display:none;
+	width:550px;
+	height:500px;
+	position: absolute;
+	top:100px;
+	left:100px;
+	border-radius: 10px;
+	background: #fff;
+}
+.question>input{
+	width:100px;
+	height:20px;
+	position:absolute;
+	top:0;
+	left:-30px;
+	opacity: 0;
+	cursor:pointer;
+}
+#input{
+	position:absolute;
+	right:0;
+	top:3px;
+	width:30px;
+	height:20px;
+	opacity:0;
+	cursor:pointer;
+}
+.question>input:checked+.question-alert{
+	display: block;
+}
+.question-alert>div{
+	height:30px;
+    background:-webkit-linear-gradient(top,#1d7fe2,#0865c2);
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    padding-top:5px;
+    color:#fff;
+    position: relative;
+}
+.question-alert>div>i{
+	float:right;
+	display: block;
+	height:20px;
+	width:30px;
+	text-align: center;
+}
+
+.question-alert>form>input{
+	height:30px;
+	width:90%;
+}
+.question-input{
+	width:90%;
+	height:50px;
+	overflow: auto;
+	resize:none;
+	margin-top:10px;
+}
+#question-content{
+	height:200px;
+	overflow: auto;
+}
+.question-alert .button{
+	width:150px;
+	height:30px;
+	display: block;
+	float:right;
+	margin-top:10px;
+	margin-right:27px;
+}
+.question-alert .button>button{
+	background: #1d7fe2;
+	border-style: none;
+	width:70px;
+	height:30px;
+	cursor: pointer;
+}
+.BtnBox{
+	background: #fafafa;
+	width:632px;
+	height: 48px;
+	border-radius: 4px;
+	border: 1px solid #f0f0f0;
+}
+.BtnBox ul li{
+	list-style-type: none;
+	display: inline-block;
+	height:20px;
+	margin-top:14px;
+	margin-right: 100px;
+	text-align: center;
+	margin-left:50px;
+	position:relative;
+	cursor:pointer;
+}
+
+a{
+	text-decoration: none;
+
+}
+a{
+	color:#259;
+}
+a:link{
+	color:#259;
+}
+a:visited{
+	color:#259;
+
+}
+
