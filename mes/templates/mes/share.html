@@ -9,16 +9,15 @@
 				<input id="input" autocomplete="off" type="radio" name="question-alert">
 				<i id="alert-close" class="fa fa-times"></i>
 			</div>
-			<form action="">
-				<textarea name="" class="question-input" id="question-title"  placeholder="写下你的问题">
-					
-				</textarea>
+			<form action="{% url 'mes:share'%}" method="POST">
+			{%csrf_token%}
+				<textarea name="title" class="question-input" id="question-title"  placeholder="写下你的问题"></textarea>
 				</br>
 				<span>问题说明</span>
-				<textarea name="" class="question-input" id="question-content"></textarea>
+				<textarea name="content" class="question-input" id="question-content"></textarea>
 				<br/>
 				<span>选择话题</span>
-				<input type="text">
+				<input name="tag" type="text">
 				<span class="button">
 				<button>取消</button>
 				<button>发布</button>
@@ -32,5 +31,12 @@
 		<li><a href=""><i class="fa-li fa fa-pencil-square-o"></i>写文章</a></li>
 	</ul>
 </div>
+	{% for question in object_list %}
+	<div>{{question.title}}<br/>
+	{{question.content}}<br/>
+	{{question.pub_date}}
+	</div>
+	
+	{%endfor%}
 
 {% endblock %}

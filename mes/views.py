@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic.detail import DetailView
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
-from mes.models import News
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
+from mes.models import News, Question
+from django.urls import reverse
 
 
 class Home(ListView):
@@ -14,5 +13,15 @@ class Home(ListView):
     template_name = 'mes/home.html'
 
 
-class Share(TemplateView):
+class Share(ListView):
+    model = Question
     template_name = "mes/share.html"
+
+    def post(self, request):
+        title = request.POST['title']
+        content = request.POST['content']
+        tag = request.POST['tag']
+        insert = Question(title=title, content=content)
+        insert.save()
+        return redirect(reverse('mes:share'))
+        # return redirect('mes:share')
