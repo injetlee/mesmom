@@ -1,42 +1,60 @@
 {% extends "base.html"%}
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'styles/share.css' %}"/>
+<!-- todo以后扩展使用，增加节点选项
+<div>
+	<ul>
+		<li>MES</li>
+		<li>物联网</li>
+	</ul>
+</div> -->
 <div class="BtnBox">
 	<ul class="fa-ul">
 		<li class="question">
-		<input autocomplete="off" type="radio" name="question-alert">
-		<div class="question-alert">
-			<div>提问
-				<input id="input" autocomplete="off" type="radio" name="question-alert">
-				<i id="alert-close" class="fa fa-times"></i>
+			<input autocomplete="off" type="radio" name="question-alert">
+			<div class="question-alert">
+				<div>提问
+					<input id="input" autocomplete="off" type="radio" name="question-alert">
+					<i id="alert-close" class="fa fa-times"></i>
+				</div>
+				<form action="{% url 'mes:share'%}" method="POST">
+				{%csrf_token%}
+					<textarea name="title" class="question-input" id="question-title"  placeholder="写下你的问题"></textarea>
+					</br>
+					<span>问题说明</span>
+					<textarea name="content" class="question-input" id="question-content"></textarea>
+					<br/>
+					<span>选择话题</span>
+					<input name="tag" type="text">
+					<span class="button">
+					<button>取消</button>
+					<button>发布</button>
+					</span>
+				</form>
 			</div>
-			<form action="{% url 'mes:share'%}" method="POST">
-			{%csrf_token%}
-				<textarea name="title" class="question-input" id="question-title"  placeholder="写下你的问题"></textarea>
-				</br>
-				<span>问题说明</span>
-				<textarea name="content" class="question-input" id="question-content"></textarea>
-				<br/>
-				<span>选择话题</span>
-				<input name="tag" type="text">
-				<span class="button">
-				<button>取消</button>
-				<button>发布</button>
-				</span>
-			</form>
-		</div>
 			<a><i class="fa-li fa fa-question-circle-o"></i>提问</a>
-			
 		</li>
 		<li><a href=""><i class="fa-li fa fa-file-text-o"></i>回答</a></li>
 		<li><a href=""><i class="fa-li fa fa-pencil-square-o"></i>写文章</a></li>
 	</ul>
-</div>
-	{% for question in object_list %}
-	<div>{{question.title}}<br/>
-	{{question.content}}<br/>
-	{{question.pub_date}}
+	<div>
+		<span class="last_activity"><i class="fa fa-eye"></i>最新动态</span>
 	</div>
-	
+	{% for question in Question %}
+	<div>
+		<span class="title">
+			<a href="">{{question.title}}</a>
+		</span>
+		<span class="content">
+			<p>{{question.content}}</p>
+		</span>
+		<span class="pub_date">
+			{{question.pub_date}}
+		</span>
+	</div>
 	{%endfor%}
+	
+</div>
 
 {% endblock %}

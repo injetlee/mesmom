@@ -109,4 +109,22 @@ a:visited{
 	color:#259;
 
 }
-
+.last_activity{
+	font-size:20px;
+	color:#fff;
+	font-weight: 700;
+	display: block;
+	margin-top:20px;
+}
+.title{
+	font-size:20px;
+	color:#259;
+	fong-weight:700;
+	display: block;
+	border-top:2px solid #303030;
+}
+.content{
+	font-size:13px;
+	overflow-wrap: break-word;
+	color:#222;
+}

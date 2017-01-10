@@ -16,6 +16,7 @@ class Home(ListView):
 class Share(ListView):
     model = Question
     template_name = "mes/share.html"
+    context_object_name = 'Question'
 
     def post(self, request):
         title = request.POST['title']
